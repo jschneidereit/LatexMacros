@@ -1,0 +1,67 @@
+% A collection of commonly used LaTeX macros for writing math.
+
+\ProvidesPackage{mymath}
+
+% TODO: edit required packages
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{latexsym}
+%\RequirePackage{eufrak}
+%\RequirePackage{eucal}
+
+% theorems
+\theoremstyle{definition}
+\newtheorem{amsthm}{Theorem}[section]
+\newtheorem{amslem}[amsthm]{Lemma}
+\newtheorem{amsdef}[amsthm]{Definition}
+\theoremstyle{remark}
+\newtheorem*{amsrem}{Remark}
+\newtheorem*{amsexl}{Example}
+
+% qed symbol
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}}
+
+% math operators
+\DeclareMathOperator{\Forall}{\forall}
+\DeclareMathOperator{\Exists}{\exists}
+\DeclareMathOperator{\Not}{\lnot}
+%\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\cod}{co-dom}
+
+% TODO: add more operators
+
+% Ensure math mode.
+%
+% #1 content
+%
+%\newcommand{\OB}[1]{\ensuremath{#1}}
+\def\OB#1{\ifmmode#1\else\mbox{$#1$}\fi}
+
+% Set notation.
+%
+% #1 elements
+%
+\newcommand{\myset}[1]{\OB{\lbrace\,#1\,\rbrace}}
+
+% Generator notation.
+%
+% #1 generators
+%
+\newcommand{\mygen}[1]{\OB{\langle\,#1\,\rangle}}
+
+% Presentation notation.
+%
+% #1 element
+% #2 predicate
+%
+\newcommand{\mygenb}[2]{\mygen{#1 \mid #2}}
+
+% Set builder notation.
+%
+% #1 element
+% #2 predicate
+%
+\newcommand{\mysetb}[2]{\myset{#1 \mid #2}}
+
+% TODO: add more macro definitions

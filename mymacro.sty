@@ -1,0 +1,54 @@
+% A collection of commonly used LaTeX macros.
+
+\ProvidesPackage{mymacro}
+
+% Print note. Use \medskip within to break up paragraphs if needed. To make all
+% note boxes invisible, add \renewcommand{\NOTE}[1]{} after importing this file.
+%
+% #1 text
+%
+\newlength{\dummylen}
+\newcommand{\NOTE}[1]
+  {%
+    \setlength{\dummylen}{\fboxrule}%
+    \setlength{\fboxrule}{1pt}%
+    \vspace{\baselineskip}%
+    \noindent%
+    \hfill%
+    \fbox{\begin{minipage}{0.96\textwidth}#1\end{minipage}}%
+    \setlength{\fboxrule}{\dummylen}%
+    \hfill%
+    \vspace{\baselineskip}%
+  }
+
+% Print TODO note.
+%
+% #1 text
+%
+\newcommand{\TODO}[1]
+  {%
+    \ifdefined\color
+      {\color{red}[{\bf TODO:}~#1]}%
+    \else
+      {\emph{[{\bf TODO:}~#1]}}%
+    \fi
+  }
+
+% Simple title command.
+%
+% #1 name
+% #2 date
+% #3 title
+%
+\newcommand{\TITLE}[3]
+  {%
+    \noindent%
+    \parbox{0.96\textwidth}
+      {%
+        \noindent%
+        {\bf Name:}~#1\\
+        {\bf Date:}~#2\\
+        #3
+        \vspace{\baselineskip}%
+      }
+  }
