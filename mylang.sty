@@ -40,11 +40,18 @@
 
 % Typing relation.
 %
+% #1 term
+% #2 type
+%
+\newcommand{\mytype}[2]{\ensuremath{#1:#2}}
+
+% Typing relation with context.
+%
 % #1 context
 % #2 term
 % #3 type
 %
-\newcommand{\mytype}[3]{\ensuremath{#1\,\vdash\,#2:#3}}
+\newcommand{\mytypectx}[3]{\ensuremath{#1\,\vdash\,\mytype{#2}{#3}}}
 
 % Lambda abstraction.
 %
