@@ -1,6 +1,6 @@
 % A collection of commonly used LaTeX macros.
 
-\ProvidesPackage{mymacro}
+\ProvidesPackage{shmacro}
 
 % Print note. Use \medskip within to break up paragraphs if needed. To make all
 % note boxes invisible, add \renewcommand{\NOTE}[1]{} after importing this file.
@@ -23,9 +23,9 @@
 
 % Print TODO note.
 %
-% #1 text
+% #1 text (no paragraph breaks)
 %
-\newcommand{\TODO}[1]
+\newcommand*{\TODO}[1]
   {%
     \ifdefined\color
       {\color{red}[{\bf TODO:}~#1]}%

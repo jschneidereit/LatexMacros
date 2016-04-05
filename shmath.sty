@@ -11,12 +11,12 @@
 
 % theorems
 \theoremstyle{definition}
-\newtheorem{amsthm}{Theorem}[section]
-\newtheorem{amslem}[amsthm]{Lemma}
-\newtheorem{amsdef}[amsthm]{Definition}
+\newtheorem{shthm}{Theorem}[section]
+\newtheorem{shlem}[amsthm]{Lemma}
+\newtheorem{shdef}[amsthm]{Definition}
 \theoremstyle{remark}
-\newtheorem*{amsrem}{Remark}
-\newtheorem*{amsexl}{Example}
+\newtheorem*{shrem}{Remark}
+\newtheorem*{shexl}{Example}
 
 % qed symbol
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
@@ -42,26 +42,26 @@
 %
 % #1 elements
 %
-\newcommand{\myset}[1]{\OB{\lbrace\,#1\,\rbrace}}
-
-% Generator notation.
-%
-% #1 generators
-%
-\newcommand{\mygen}[1]{\OB{\langle\,#1\,\rangle}}
-
-% Presentation notation.
-%
-% #1 element
-% #2 predicate
-%
-\newcommand{\mygenb}[2]{\mygen{#1 \mid #2}}
+\newcommand{\shset}[1]{\OB{\lbrace\,#1\,\rbrace}}
 
 % Set builder notation.
 %
 % #1 element
 % #2 predicate
 %
-\newcommand{\mysetb}[2]{\myset{#1 \mid #2}}
+\newcommand{\shsetb}[2]{\shset{#1\mid#2}}
+
+% Generator notation.
+%
+% #1 generators
+%
+\newcommand{\shgen}[1]{\OB{\langle\,#1\,\rangle}}
+
+% Presentation notation.
+%
+% #1 element
+% #2 predicate
+%
+\newcommand{\shgenb}[2]{\shgen{#1\mid#2}}
 
 % TODO: add more macro definitions
