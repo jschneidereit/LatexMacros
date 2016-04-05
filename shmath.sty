@@ -31,18 +31,11 @@
 
 % TODO: add more operators
 
-% Ensure math mode.
-%
-% #1 content
-%
-%\newcommand{\OB}[1]{\ensuremath{#1}}
-\def\OB#1{\ifmmode#1\else\mbox{$#1$}\fi}
-
 % Set notation.
 %
 % #1 elements
 %
-\newcommand{\shset}[1]{\OB{\lbrace\,#1\,\rbrace}}
+\newcommand{\shset}[1]{\ensuremath{\lbrace\,#1\,\rbrace}}
 
 % Set builder notation.
 %
@@ -55,7 +48,7 @@
 %
 % #1 generators
 %
-\newcommand{\shgen}[1]{\OB{\langle\,#1\,\rangle}}
+\newcommand{\shgen}[1]{\ensuremath{\langle\,#1\,\rangle}}
 
 % Presentation notation.
 %
