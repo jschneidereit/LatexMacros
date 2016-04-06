@@ -1,0 +1,100 @@
+% Demo for commonly used LaTeX macros.
+
+% preamble
+\documentclass[10pt,letterpaper]{article}
+
+%\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage{mathptmx}
+%\usepackage{mathpazo}
+%\usepackage{newcent}
+%\usepackage{bookman}
+%\usepackage{helvet}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+%\usepackage{eufrak}
+%\usepackage{eucal}
+%\usepackage{geometry}
+%\usepackage{layout}
+%\usepackage{array}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+%\usepackage[hidelinks]{hyperref}
+%\usepackage[final]{listings}
+
+\usepackage{shmacro}
+\usepackage{shlang}
+\usepackage{shmath}
+
+\vfuzz2pt % allow overflow by 2 points
+\hfuzz2pt % allow overflow by 2 points
+
+\title{<document title>}
+\author{%
+  Spencer Hubbard\\
+  College of Arts and Science\\
+  University of Washington
+}
+\date{\today}
+
+\begin{document}
+% front matter
+\maketitle
+
+% main matter
+\section{General Macros}
+\label{sec:macro}
+
+\NOTE{This is a note.}
+
+\TODO{This is a todo note.}
+
+\section{Language Macros}
+\label{sec:lang}
+
+\begin{figure}[htb]
+  \begin{syn}
+    x \in Var & & & \textit{any variable} \\
+    t \in Term
+    & ::= x & \textit{reference} \\
+    & | & \LCabs{x}{T}{t} & \textit{abstraction} \\
+    & | & \LCapp{t}{t} & \textit{application} \\
+  \end{syn}
+  \caption{Syntax for lambda calculus}
+  \label{fig:syn}
+\end{figure}
+
+\begin{figure}[htb]
+  \begin{align*}
+    &\inferrule[E-AppAbs]
+    { }
+    { \LCapp{(\dsep\LCabs{x}{T}{t}\dsep)}{v} \eval\ \LCsub{x}{v}{t} } &
+    &\inferrule[E-App1]
+    { t_1 \eval\ t_1^\prime }
+    { \LCapp{t_1}{t_2} \eval\ \LCapp{t_1^\prime}{t_2} } &
+    &\inferrule[E-App2]
+    { t_2 \eval\ t_2^\prime }
+    { \LCapp{t_1}{t_2} \eval\ \LCapp{t_1}{t_2^\prime} }
+  \end{align*}
+  \caption{Evaluation rules for lambda calculus}
+  \label{fig:eval}
+\end{figure}
+
+\section{Math Macros}
+\label{sec:math}
+
+The set of even integers is defined as
+$$
+  2\mathbb{Z} = \setb{2k}{k \in \mathbb{Z}} .
+$$
+
+The Klein 4-group (or \emph{Viergruppe}) has the following presentation:
+$$
+  V = \genb{a, b, c}{a^2 = b^2 = c^2 = 1} .
+$$
+
+% back matter
+
+\end{document}

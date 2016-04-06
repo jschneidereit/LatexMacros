@@ -6,51 +6,57 @@
 \RequirePackage{mathpartir}
 \RequirePackage{stmaryrd}
 
-% Semantics function.
+% Semantic (or valuation) function for denotational semantics.
 %
 % #1 subscript (optional)
 % #2 argument
 %
-\newcommand{\shsem}[2][{}]{\ensuremath{\shlsem#2\shrsem_{#1}}}
-\newcommand{\shlsem}{\llbracket}
-\newcommand{\shrsem}{\rrbracket}
+\newcommand*{\sem}[2][{}]{\ensuremath{\seml#2\semr_{#1}}}
+\newcommand*{\seml}{\llbracket}
+\newcommand*{\semr}{\rrbracket}
 
 % Syntax / grammar.
 %
-%
-%
-\newenvironment{shsyn}
+\newenvironment{syn}
   {\[\begin{array}{rcl@{\quad}l}}
   {\end{array}\]\ignorespacesafterend}
 
-% Evaluation relation.
+% Evaluation relation for small-step operational semantics.
 %
-% #1 left hand side
-% #2 right hand side
+% #1 LHS
+% #2 RHS
 %
-\newcommand{\sheval}[2]{\ensuremath{#1\longmapsto#2}}
+\newcommand*{\eval}[2]{\ensuremath{#1\longmapsto#2}}
 
-% Reflexive, transitive closure of evaluation relation.
+% Reflexive, transitive closure of evaluation relation, i.e., small-step
+% operational semantics.
 %
-% #1 left hand side
-% #2 right hand side
+% #1 LHS
+% #2 RHS
 %
-\newcommand{\shstar}[2]{\ensuremath{#1\overset{\ast}{\longmapsto}#2}}
+\newcommand*{\evals}[2]{\ensuremath{#1\overset{\ast}{\longmapsto}#2}}
+
+% Big-step operational semantics.
+%
+% #1 LHS
+% #2 RHS
+%
+\newcommand*{\evalb}[2]{\ensuremath{#1\,\Downarrow\,#2}}
 
 % Typing relation.
 %
 % #1 term
 % #2 type
 %
-\newcommand{\shtype}[2]{\ensuremath{#1:#2}}
+\newcommand*{\typeof}[2]{\ensuremath{#1:#2}}
 
-% Typing relation with context.
+% Typing relation in context.
 %
 % #1 context
 % #2 term
 % #3 type
 %
-\newcommand{\shctx}[3]{\ensuremath{#1\,\vdash\,\mytype{#2}{#3}}}
+\newcommand*{\typein}[3]{\ensuremath{#1\,\vdash\,\typeof{#2}{#3}}}
 
 % Substitution.
 %
@@ -58,7 +64,7 @@
 % #2 term
 % #3 scope
 %
-\newcommand{\shsub}[3]{\ensuremath{[#2/#1]\,#3}}
+\newcommand*{\LCsub}[3]{\ensuremath{[#2/#1]\,#3}}
 
 % Lambda abstraction.
 %
@@ -66,11 +72,11 @@
 % #2 type annotation
 % #3 body
 %
-\newcommand{\shabs}[3]{\ensuremath{\lambda\,#1:#2\,.\,#3}}
+\newcommand*{\LCabs}[3]{\ensuremath{\lambda\,#1:#2\,.\,#3}}
 
 % Function application.
 %
 % #1 left term
 % #2 right term
 %
-\newcommand{\shapp}[2]{\ensuremath{#1\;#2}}
+\newcommand*{\LCapp}[2]{\ensuremath{#1\;#2}}

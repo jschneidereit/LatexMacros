@@ -29,32 +29,39 @@
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\cod}{co-dom}
 
-% TODO: add more operators
+% length for delimiter separation
+\newlength{\dlen}
+\setlength{\dlen}{1pt}
+
+% delimiter separation
+\newcommand*{\dsep}{\hspace{\dlength}}
 
 % Set notation.
 %
 % #1 elements
 %
-\newcommand{\shset}[1]{\ensuremath{\lbrace\,#1\,\rbrace}}
+\newcommand*{\set}[1]{\ensuremath{\setl\dsep#1\dsep\setr}}
+\newcommand*{\setl}{\lbrace}
+\newcommand*{\setr}{\rbrace}
 
 % Set builder notation.
 %
 % #1 element
 % #2 predicate
 %
-\newcommand{\shsetb}[2]{\shset{#1\mid#2}}
+\newcommand*{\setb}[2]{\set{#1\mid#2}}
 
 % Generator notation.
 %
 % #1 generators
 %
-\newcommand{\shgen}[1]{\ensuremath{\langle\,#1\,\rangle}}
+\newcommand*{\gen}[1]{\ensuremath{\genl\dsep#1\dsep\genr}}
+\newcommand*{\genl}{\langle}
+\newcommand*{\genr}{\rangle}
 
 % Presentation notation.
 %
-% #1 element
-% #2 predicate
+% #1 generators
+% #2 identities
 %
-\newcommand{\shgenb}[2]{\shgen{#1\mid#2}}
-
-% TODO: add more macro definitions
+\newcommand*{\genb}[2]{\gen{#1\mid#2}}
