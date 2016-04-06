@@ -2,25 +2,6 @@
 
 \ProvidesPackage{shmacro}
 
-% Print note. Use \medskip within to break up paragraphs if needed. To make all
-% note boxes invisible, add \renewcommand{\NOTE}[1]{} after importing this file.
-%
-% #1 text
-%
-\newlength{\dummylen}
-\newcommand{\NOTE}[1]
-  {%
-    \setlength{\dummylen}{\fboxrule}%
-    \setlength{\fboxrule}{1pt}%
-    \vspace{\baselineskip}%
-    \noindent%
-    \hfill%
-    \fbox{\begin{minipage}{0.96\textwidth}#1\end{minipage}}%
-    \setlength{\fboxrule}{\dummylen}%
-    \hfill%
-    \vspace{\baselineskip}%
-  }
-
 % Print TODO note.
 %
 % #1 text (no paragraph breaks)
