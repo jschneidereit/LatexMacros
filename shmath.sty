@@ -1,6 +1,6 @@
 % A collection of commonly used LaTeX macros for writing math.
 
-\ProvidesPackage{mymath}
+\ProvidesPackage{shmath}
 
 % TODO: edit required packages
 \RequirePackage{amsmath}
@@ -10,13 +10,22 @@
 %\RequirePackage{eucal}
 
 % theorems
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+
 \theoremstyle{definition}
-\newtheorem{shthm}{Theorem}[section]
-\newtheorem{shlem}[amsthm]{Lemma}
-\newtheorem{shdef}[amsthm]{Definition}
+\newtheorem{definition}{Definition}
+
 \theoremstyle{remark}
-\newtheorem*{shrem}{Remark}
-\newtheorem*{shexl}{Example}
+\newtheorem*{remark}{Remark}
+\newtheorem*{example}{Example}
+
+% equation numbering
+%\numberwithin{equation}{section}
 
 % qed symbol
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
@@ -29,18 +38,11 @@
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\cod}{co-dom}
 
-% length for delimiter separation
-\newlength{\dlen}
-\setlength{\dlen}{1pt}
-
-% delimiter separation
-\newcommand*{\dsep}{\hspace{\dlength}}
-
 % Set notation.
 %
 % #1 elements
 %
-\newcommand*{\set}[1]{\ensuremath{\setl\dsep#1\dsep\setr}}
+\newcommand*{\set}[1]{\ensuremath{\setl\,#1\,\setr}}
 \newcommand*{\setl}{\lbrace}
 \newcommand*{\setr}{\rbrace}
 
@@ -55,7 +57,7 @@
 %
 % #1 generators
 %
-\newcommand*{\gen}[1]{\ensuremath{\genl\dsep#1\dsep\genr}}
+\newcommand*{\gen}[1]{\ensuremath{\genl\,#1\,\genr}}
 \newcommand*{\genl}{\langle}
 \newcommand*{\genr}{\rangle}
 

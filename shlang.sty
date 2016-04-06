@@ -11,7 +11,7 @@
 % #1 subscript (optional)
 % #2 argument
 %
-\newcommand*{\sem}[2][{}]{\ensuremath{\seml#2\semr_{#1}}}
+\newcommand*{\sem}[2][{}]{\ensuremath{\seml\,#2\,\semr_{#1}}}
 \newcommand*{\seml}{\llbracket}
 \newcommand*{\semr}{\rrbracket}
 
@@ -41,7 +41,7 @@
 % #1 LHS
 % #2 RHS
 %
-\newcommand*{\evalb}[2]{\ensuremath{#1\,\Downarrow\,#2}}
+\newcommand*{\evalb}[2]{\ensuremath{#1\Downarrow#2}}
 
 % Typing relation.
 %
@@ -50,13 +50,13 @@
 %
 \newcommand*{\typeof}[2]{\ensuremath{#1:#2}}
 
-% Typing relation in context.
+% Typing relation with context.
 %
 % #1 context
 % #2 term
 % #3 type
 %
-\newcommand*{\typein}[3]{\ensuremath{#1\,\vdash\,\typeof{#2}{#3}}}
+\newcommand*{\typectx}[3]{\ensuremath{#1\,\vdash\,\typeof{#2}{#3}}}
 
 % Substitution.
 %
