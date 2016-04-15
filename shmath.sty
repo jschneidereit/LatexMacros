@@ -1,28 +1,31 @@
 % A collection of commonly used LaTeX macros for writing math.
 
+%\NeedsTeXFormat{LaTeX2e}[2005/12/01]
 \ProvidesPackage{shmath}
 
 % TODO: edit required packages
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{latexsym}
+%\RequirePackage[mathscr]{eucal}
 %\RequirePackage{eufrak}
-%\RequirePackage{eucal}
+\RequirePackage{amsthm}
+
+%\RequirePackage{verbatim}
+%\RequirePackage{enumerate}
+%\RequirePackage{xspace}
 
 % theorems
-
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}
-\newtheorem{corollary}{Corollary}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
-
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{example}{Example}
+%\theoremstyle{plain}
+%\newtheorem{theorem}{Theorem}%[section]
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\theoremstyle{remark}
+%\newtheorem*{remark}{Remark}
+%\newtheorem*{example}{Example}
 
 % equation numbering
 %\numberwithin{equation}{section}
@@ -35,8 +38,12 @@
 \DeclareMathOperator{\Exists}{\exists}
 \DeclareMathOperator{\Not}{\lnot}
 %\DeclareMathOperator{\im}{im}
+%\DeclareMathOperator{\ker}{ker}
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\cod}{co-dom}
+
+% math symbols
+\DeclareMathSymbol{\Emptyset}{\mathord}{AMSb}{"3F}
 
 % Set notation.
 %
@@ -51,7 +58,7 @@
 % #1 element
 % #2 predicate
 %
-\newcommand*{\setb}[2]{\set{#1\mid#2}}
+\newcommand*{\setm}[2]{\set{#1\mid#2}}
 
 % Generator notation.
 %
@@ -66,4 +73,4 @@
 % #1 generators
 % #2 identities
 %
-\newcommand*{\genb}[2]{\gen{#1\mid#2}}
+\newcommand*{\genm}[2]{\gen{#1\mid#2}}

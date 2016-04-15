@@ -1,5 +1,6 @@
 % A collection of commonly used LaTeX macros for general use.
 
+%\NeedsTeXFormat{LaTeX2e}[2005/12/01]
 \ProvidesPackage{shmacro}
 
 % Print TODO note.
@@ -13,30 +14,4 @@
     \else
       {\emph{[{\bf TODO:}~#1]}}%
     \fi
-  }
-
-% Ensure math mode.
-%
-% #1 content
-%
-%\newcommand{\OB}[1]{\ensuremath{#1}}
-\def\OB#1{\ifmmode#1\else\mbox{$#1$}\fi}
-
-% Simple title command.
-%
-% #1 name
-% #2 date
-% #3 title
-%
-\newcommand{\TITLE}[3]
-  {%
-    \noindent%
-    \parbox{0.96\textwidth}
-      {%
-        \noindent%
-        {\bf Name:}~#1\\
-        {\bf Date:}~#2\\
-        #3
-        \vspace{\baselineskip}%
-      }
   }
